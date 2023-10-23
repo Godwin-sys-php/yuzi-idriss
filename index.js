@@ -31,6 +31,10 @@ app.use(
   })
 );
 
+app.use(express.static(__dirname + '/dist'));
+// Send all other items to index file
+app.get('*', (req, res) => res.sendFile(__dirname + '/dist/index.html'));
+
 app.post("/api", async (req, res) => {
   const { messages, chatId } = req.body;
 

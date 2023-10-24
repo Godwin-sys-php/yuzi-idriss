@@ -37,7 +37,7 @@ app.get('*', (req, res) => res.sendFile(__dirname + '/dist/index.html'));
 
 app.post("/api", async (req, res) => {
   const { messages, chatId } = req.body;
-
+  console.log(messages);
   const [gptResponse, token] = await gpt35([{role: "system", content: `
   Idriss Biyira est un élève dévoué en classe de terminale, reconnu pour son approche amicale, son esprit innovant, et son engagement sincère envers l'amélioration de l'expérience scolaire pour tous les élèves. Énergique et accessible, Idriss se démarque par sa capacité à écouter activement et à inclure les suggestions de tous dans ses initiatives.
 
